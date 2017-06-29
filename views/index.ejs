@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2><a href="/add">添加信息</a></h2>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tr>
+        <th rowspan="2" >姓名</th>
+        <th rowspan="2" >年龄</th>
+        <th rowspan="2" >爱好</th>
+        <th colspan="2">成绩</th>
+        <th colspan="2" rowspan="2">操作</th>
+    </tr>
+    <tr>
+        <td >语文</td>
+        <td >数学</td>
+    </tr>
+    <% for (var i = 0; i < studentData.length; i++){ %>
+    <tr>
+        <td><%= studentData[i].name %></td>
+        <td><%= studentData[i].age %></td>
+        <td><%= studentData[i].hobby %></td>
+        <td><%= studentData[i].score.yuwen %></td>
+        <td><%= studentData[i].score.shuxue %></td>
+        <td><a href="/update">修改</a></td>
+        <td><a href="/<%= studentData[i]._id %>">删除</a></td>
+    </tr>
+    <% } %>
+</table>
+</body>
+</html>
